@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Please click the button below to calculate tax</p>
+
+
+    <a asp-page="Taxes/create" class="btn btn-primary">
+        Calculate tax
+    </a>
+
+
+</div>

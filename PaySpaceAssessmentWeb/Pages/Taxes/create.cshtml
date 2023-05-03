@@ -1,0 +1,24 @@
+﻿@page
+@model PaySpaceAssessmentWeb.Pages.Taxes.createModel
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary" pl-3">Please provide the following details to calculate tax:</h2>
+        </div>
+>        <div class="mb-3">
+            Annual income:
+            <input asp-for="@Model.Tax.annualIncome" class="form-control"/>
+            <span asp-validation-for="@Model.Tax.annualIncome" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            Postal code:
+            <input asp-for="@Model.Tax.postalCode" class="form-control"/>
+            <span asp-validation-for="@Model.Tax.postalCode" class="text-danger"></span>
+        </div>
+      
+        <button type="submit" class="btn btn-primary" style="width:150px;">Calculate tax</button>
+        <a asp-page="/Index" class="btn btn-secondary" style="width:150px;">Back to home</a>
+
+    </div>
+</form>
+

@@ -1,0 +1,52 @@
+﻿@page
+@model PaySpaceAssessmentWeb.Pages.Taxes.IndexModel
+
+<div class="container p-3">
+    <div class"row pt-4">
+            <div class="text-center"> <h2 class="text-primary">List of tax payable income based on annual income and postal code</h2></div>
+    </div>
+
+    <br/><br/>
+
+    <div class="col-6">
+        <a asp-page="create" class="btn btn-primary">
+            Calculate another tax
+        </a>
+    </div>
+
+    <br /><br />
+
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Annual Income</th>
+                <th>Postal Code</th>
+                <th>Tax</th>
+                <th>Time</th>
+                <th>Update/Delete record</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model.Taxes)
+            {
+                <tr>
+                    <td width="50%">R @obj.annualIncome</td>
+                    <td width="30%">@obj.postalCode</td>
+                    <td width="20%">R @obj.tax</td>
+                    <td width="50%">@obj.dateTime</td>
+                    <td>
+                        <a asp-page="update" asp-route-id="@obj.Id" class="btn btn-primary">
+                            Update
+                        </a>
+                        <br /><br />
+                        <a asp-page="delete" asp-route-id="@obj.Id" class="btn btn-primary">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>

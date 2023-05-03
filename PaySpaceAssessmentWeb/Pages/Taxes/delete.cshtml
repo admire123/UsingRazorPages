@@ -1,0 +1,25 @@
+﻿@page
+@model PaySpaceAssessmentWeb.Pages.Taxes.deleteModel
+
+
+<form method="post">
+
+    <input hidden asp-for="@Model.Tax.Id" />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary" pl-3">Delete record:</h2>
+        </div>
+        <div class="mb-3">
+            Annual income:
+            <input asp-for="@Model.Tax.annualIncome" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            Postal code:
+            <input asp-for="@Model.Tax.postalCode" disabled class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-danger" style="width:150px;">Delete</button>
+        <a asp-page="Index" class="btn btn-secondary" style="width:150px;">Back to list</a>
+
+    </div>
+</form>
